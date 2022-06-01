@@ -2,6 +2,8 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "api-contacts": "libs/api/contacts",
+    "api-core": "libs/api/core",
     "cbs-api": "apps/cbs-api"
   }
 }

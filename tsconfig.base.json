@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@cbs/api/contacts": ["libs/api/contacts/src/index.ts"],
+      "@cbs/api/core": ["libs/api/core/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

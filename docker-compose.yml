@@ -1,0 +1,42 @@
+version: '3.8'
+services:
+  cbs-mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+    command: mongod --quiet --logpath /dev/null
+    volumes:
+      - mongodb_data:/var/lib/mongodb/data
+    extra_hosts:
+        - "host.docker.internal:host-gateway"
+    networks:
+      - monorepo_net
+  cbs-api:
+    build:
+      context: .
+      dockerfile: /home/duard/dev-ME/cbs/apps/cbs-api/Dockerfile.cbs-api
+      target: development
+    env_file: .env.development
+    command: nx serve cbs-api
+    depends_on:
+      - cbs-mongo
+    ports:
+      - 3000:3000
+    extra_hosts:
+        - "host.docker.internal:host-gateway"
+        - localhost:192.168.100.231
+    volumes:
+      - .:/api
+      - cbs-api_vol:/usr/src/cbs-api/
+      - node_modules:/usr/src/node_modules/
+    networks:
+      - monorepo_net
+
+volumes:
+  cbs-api_vol:
+  mongodb_data:
+  node_modules:
+
+networks:
+  monorepo_net:
+    driver: bridge
