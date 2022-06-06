@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+*, *::before, *::after {
+	box-sizing: border-box;
+	font-family: inherit;
+}
+
+body {
+	margin: 0;
+	font-size: 1.125rem;
+	color: #333;
+	background: #f8f8f8;
+	display: grid;
+	// grid-template-columns: 1fr 1fr;
+	// justify-content: center;
+	// justify-items: center;
+	// align-items: center;
+	padding: 1rem;
+	font-family: 'Inter', sans-serif;
+	line-height: 1.5;
+	// gap: 0 2rem;
+}
+
+h1 { font-size: 3.6rem; margin: 0 0 1em;}
+
+h2 { font-size: 2rem; margin: 1em 0 0.5em;}
+
+form {
+	max-width: 30rem;
+	flex: 1 1 auto;
+}
+
+input,
+button {
+	color: inherit;
+	border: 2px solid #666;
+	padding: .5rem;
+	font-size: 0.9rem;
+	background: inherit;
+	border-radius: .25rem;
+	width: 100%;
+}
+
+button,
+input[type=submit] {
+	background: #333;
+	color: #f8f8f8;
+	border-color: #333;
+	width: max-content;
+	padding: 0.5em 1em;
+	font-weight: bold;
+	margin-top: 1em;
+	font-size: 1.2rem;
+	margin-right: 20px;
+	+ a {
+		margin-left: 1rem;
+		color: #555;
+	}
+}
+
+.form-group {
+	margin-bottom: 1rem;
+
+	label {
+		display: inline-block;
+		width: auto;
+	}
+}
+
+.split {
+	display: grid;
+	gap: 0 1rem;
+	justify-items: start;
+	justify-content: start;
+
+	&-2-1 {
+		grid-template-columns: 2fr 1fr;
+	}
+
+	&-1-1 {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	&-1-2 {
+		grid-template-columns: 1fr 2fr;
+	}
+
+	&-1-1-2 {
+		grid-template-columns: 1fr 1fr 2fr;
+	}
+}
+
+form {
+	input[value] {
+		border-color: green;
+	}
+
+	input:not(value) {
+		border-color: red;
+	}
+
+	input[type=submit] {
+		background-color: green;
+		border-color: green;
+		margin-right: 20px;;
+	}
+
+	button {
+		background-color: red;
+		border-color: red;
+		margin-right: 20px;;
+	}
+}
+
+

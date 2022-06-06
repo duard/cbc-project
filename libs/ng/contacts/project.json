@@ -1,0 +1,25 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/ng/contacts/src",
+  "prefix": "cbs",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/ng/contacts"],
+      "options": {
+        "jestConfig": "libs/ng/contacts/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/ng/contacts/**/*.ts",
+          "libs/ng/contacts/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

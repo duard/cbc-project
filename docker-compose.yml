@@ -11,6 +11,7 @@ services:
         - "host.docker.internal:host-gateway"
     networks:
       - monorepo_net
+
   cbs-api:
     build:
       context: .
@@ -24,16 +25,33 @@ services:
       - 3000:3000
     extra_hosts:
         - "host.docker.internal:host-gateway"
-        - localhost:192.168.100.231
     volumes:
       - .:/api
-      - cbs-api_vol:/usr/src/cbs-api/
+      - cbs-volume:/usr/src/cbs-api/
+      - node_modules:/usr/src/node_modules/
+    networks:
+      - monorepo_net
+
+  cbs-app-ng:
+    build:
+      context: .
+      dockerfile: /home/duard/dev-ME/cbs/apps/cbc-app-ng/Dockerfile.cbs-app-ng
+      target: development
+    env_file: .env.development
+    command: nx serve cbc-app-ng --host 0.0.0.0
+    ports:
+      - 4200:4200
+    extra_hosts:
+        - "host.docker.internal:host-gateway"
+    volumes:
+      - .:/app-ng
+      - cbs-volume:/usr/src/cbs-app-ng/
       - node_modules:/usr/src/node_modules/
     networks:
       - monorepo_net
 
 volumes:
-  cbs-api_vol:
+  cbs-volume:
   mongodb_data:
   node_modules:
 

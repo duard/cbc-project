@@ -4,6 +4,10 @@
   "projects": {
     "api-contacts": "libs/api/contacts",
     "api-core": "libs/api/core",
-    "cbs-api": "apps/cbs-api"
+    "cbc-app-ng": "apps/cbc-app-ng",
+    "cbc-app-ng-e2e": "apps/cbc-app-ng-e2e",
+    "cbs-api": "apps/cbs-api",
+    "ng-contacts": "libs/ng/contacts",
+    "ng-shared": "libs/ng/shared"
   }
 }

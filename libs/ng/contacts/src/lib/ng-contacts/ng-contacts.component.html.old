@@ -1,0 +1,65 @@
+<h1>Contacts</h1>
+<!--
+<div class="category">
+
+  <p>
+    <button type="submit" [disabled]="!formGroup.valid">Submit</button>
+    <button (click)="partialUpdate()">Partial Update</button>
+    <button (click)="fullUpdate()">Full Update</button>
+    <button (click)="reset()">Cancel</button>
+  </p>
+
+</div> -->
+
+<form id="form" novalidate [formGroup]="formGroup">
+  <section>
+
+    <label for="firstName" class="name">
+      Full name
+    </label>
+    <input id="name" type="text" placeholder="Your full name" formControlName="name">
+
+    <label for="email" class="email">
+      Email address
+    </label>
+    <input id="email" type="email" placeholder="Your email address" formControlName="email">
+
+    <label for="confirm" class="confirm">
+      Confirm Email Address
+    </label>
+    <input id="email" type="email" placeholder="Confirm your email address" formControlName="confirm">
+
+    <label for="firstName" class="mobile">
+      Mobile Phone
+    </label>
+    <input class="field" type="text" placeholder="Your Mobile Phone" formControlName="mobile">
+
+    <input type="submit" value="Confirm">
+    <button>Cancel</button>
+  </section>
+</form>
+
+
+<hr>
+
+<!-- <ul class="list-group">
+  <li *ngFor="let record of records" class="list-group-item">
+    {{ record.name }}
+  </li>
+</ul> -->
+
+<!-- <hr> -->
+<div class="category" fxLayout="column" *ngIf="records$ | async as data; else noRecords">
+  <table *ngFor="let record of data" class="list-group-item">
+    <tr>
+      <td>{{ record.name }}</td>
+      <td><button (click)="reset()">Excluir</button></td>
+      <td><button (click)="reset()">Show</button></td>
+      <td><button (click)="reset()">Editar</button></td>
+    </tr>
+  </table>
+</div>
+
+<ng-template #noRecords>
+  <p>No records</p>
+</ng-template>

@@ -1,6 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "composite": false,
     "rootDir": ".",
     "sourceMap": true,
     "declaration": false,
@@ -16,7 +17,9 @@
     "baseUrl": ".",
     "paths": {
       "@cbs/api/contacts": ["libs/api/contacts/src/index.ts"],
-      "@cbs/api/core": ["libs/api/core/src/index.ts"]
+      "@cbs/api/core": ["libs/api/core/src/index.ts"],
+      "@cbs/ng/contacts": ["libs/ng/contacts/src/index.ts"],
+      "@cbs/ng/shared": ["libs/ng/shared/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
