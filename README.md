@@ -11,14 +11,4 @@
 ## start progevt
 ```npm install; npm run start:dev```
 
-## UML diagrams
-```mermaid
-graph LR
-A[Square Rect] -- Link text --> B((Circle))
-A --> C(Round Rect)
-B --> D{Rhombus}
-C --> D
-```
-# cbc-project
-# cbc-project
-# cbc-project
+[Modelo Monorepo usando NX](Screenshot from 2022-06-06 09-39-22.png)
